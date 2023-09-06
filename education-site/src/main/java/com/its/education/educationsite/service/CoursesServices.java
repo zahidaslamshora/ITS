@@ -45,16 +45,19 @@ public class CoursesServices {
 	}
 	@Transactional
 	public String deleteCoursesbyName(String courseName) {	
-		List<Courses> courseTodelete =coursesRepo.findByCourseName(courseName);
-		if(courseTodelete.isEmpty()) {
-			return "User Not Present";
-					}
-		else {
-		
-		coursesRepo.deleteUserByName(courseName);
-		return "User Deleted";
-		}
-		}
+		        try {
+		            List<Courses> courseToDelete = coursesRepo.findByCourseName(courseName);
+		            if (courseToDelete.isEmpty()) {
+		                return "Course Not Found";
+		            } else {
+		                coursesRepo.deleteUserByName(courseName);
+		                return "Course Deleted";
+		            }
+		        } catch (Exception e) {
+		            // Log the exception or perform any necessary error handling
+		            return "An error occurred while deleting the course: " + e.getMessage();
+		        }
+		    }
 		public Courses getCourseById(int courseId) {
 			Courses course=null;
 			Optional<Courses> s=coursesRepo.findById(courseId);
