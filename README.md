@@ -6,6 +6,8 @@ This project contains 3 webservice:
 2. Student
 3. Allocation
 
+we are using h2 database - http://localhost:8080/h2-console/
+
 The course webservice contains all CRUD operations where you can do the Following [ add-Course ,
 get-Courses , update-Course , delete-Course]
 
