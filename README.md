@@ -37,7 +37,7 @@ curl -X 'GET' \
 'http://localhost:8080/student/get-courses-student' \
   -H 'accept: */*'
 
-For enabling Security uncomment the dependency in pom.xml and properties in application.properties OR securityconfig class uncomment. Due to time constraint i was not able to perform security operations in depth.
+For enabling Security uncomment the dependency in pom.xml and properties in application.properties OR securityconfig class uncomment. Due to time constraint i was not able to perform security operations in depth. username is zahid and password is zahid 
 
 Sequencial Steps for smooth execution :
 1. Please Create courses using  /course/add-Course
