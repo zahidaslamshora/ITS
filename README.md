@@ -30,7 +30,25 @@ You can use swagger UI using - http://localhost:8080/swagger-ui/index.html#/
 All endpoints are visible in swagger and their functionality. 
 you can check spring profile - by changing value DEV PROD and TEST in application.properties file. for DEV port is 8080 for prod it is 9090 and for test 8180
 I have also added two custom exception classes and used in few places -> StudentsNotFoundException and ResourceNotFoundException
+you can check ResourceNotFoundException by hitting below webservice URL.
+curl -X 'GET' \
+'http://localhost:8080/student/get-courses-student' \
+  -H 'accept: */*'
 
-For enabling Security uncomment the dependency in pom.xml and in application.properties. Due to time constraint i was not able to perform security operations in depth.
+For enabling Security uncomment the dependency in pom.xml and properties in application.properties OR securityconfig class uncomment. Due to time constraint i was not able to perform security operations in depth.
+
+Sequencial Steps for smooth execution :
+1. Please Create courses using  /course/add-Course
+2. Fetch courses using /course/get-Courses
+3. Update course using /course/update-Course
+4. to check we are able to comsume courses WS using Student webservice /student/get-courses-student
+5. Regiter students to website using /student/register-student
+6. Fetch Students using /student/get-Student
+7. Allocate courses to students and add to Db using /allocation/allocate
+8. To get students with selected courses /allocation/with-courses
+9. Update course for student /allocation/update-allocated-course
+10. Delete course using course name given i first step /course/delete-Course/{courseName}
+11. Delete Student using /course/delete-Course/{courseName}
 
 
+All above webservices were tested in POSTMAN. 
